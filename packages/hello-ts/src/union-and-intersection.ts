@@ -1,5 +1,7 @@
+import { CoinFlip, UserInfoOutcome } from './types';
+
 // Unions and Intersections
-function flipCoin(): 'heads' | 'tails' {
+function flipCoin(): CoinFlip {
   if (Math.random() > 0.5) {
     return 'heads';
   }
@@ -11,9 +13,7 @@ const result = flipCoin();
 
 console.log(result);
 
-function maybeGetUserInfo():
-  | ['Error', Error]
-  | ['Success', { name: string; email: string }] {
+function maybeGetUserInfo(): UserInfoOutcome {
   if (flipCoin() === 'heads') {
     return [
       'Success',

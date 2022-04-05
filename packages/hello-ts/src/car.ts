@@ -1,5 +1,7 @@
 // Objects
 
+import { Car, phonesType } from './types';
+
 const one = {
   make: 'Toyota',
   model: 'Corolla',
@@ -16,13 +18,7 @@ const two = {
  * Print information about a given car
  * @param car - the car to print
  */
-function printCar(car: {
-  make: string;
-  model: string;
-  color?: string;
-  year: number;
-  chargeVoltage?: number;
-}) {
+function printCar(car: Car) {
   let str = `${car.make} ${car.model} ${car.year}`;
 
   if (typeof car.chargeVoltage !== 'undefined') {
@@ -41,22 +37,10 @@ printCar({
 
 // Index Signatures
 
-const phones: {
-  [k: string]: {
-    country: string;
-    area: string;
-    number: string;
-  };
-} = {};
+const phones: phonesType = {};
 
 // Array Types
-const cars: {
-  make: string;
-  model: string;
-  color?: string;
-  year: number;
-  chargeVoltage?: number;
-}[] = [];
+const cars: Car[] = [];
 
 const carss = [{ ...one }, { ...two }];
 
@@ -72,4 +56,3 @@ let myCar: [number, string, string] = [
 const [year, make, model] = myCar;
 
 myCar = [2002, 'Toyota', 'Corolla'];
-
