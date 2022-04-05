@@ -16,6 +16,12 @@ export async function addNumbers(a: number, b: number) {
   return a + b;
 }
 
+export function add(a: number, b: number): number {
+  return a + b;
+}
+
+const result = add(1, 2);
+
 //== Run the program ==//
 (async () => {
   console.log(await addNumbers(3, 4));
