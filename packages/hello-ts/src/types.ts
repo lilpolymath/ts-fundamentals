@@ -16,7 +16,10 @@ export type phonesType = {
 
 export type CoinFlip = 'heads' | 'tails';
 
-type UserInfo = { name: string; email: string };
+export interface UserInfo {
+  name: string;
+  email: string;
+}
 
 type UserInfoOutcomeError = ['Error', Error];
 
@@ -25,3 +28,7 @@ type UserInfoOutcomeSuccess = ['Success', UserInfo];
 export type UserInfoOutcome =
   | UserInfoOutcomeError
   | UserInfoOutcomeSuccess;
+
+export type SpecialDate = Date & {
+  getReason(): string;
+};
