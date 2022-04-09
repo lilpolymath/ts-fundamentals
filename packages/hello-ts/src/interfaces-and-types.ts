@@ -24,3 +24,30 @@ interface Dog extends Mammal {
 function careForDog(dog: Dog) {
   dog.getBreed();
 }
+
+interface AnimalLike {
+  eat(food): void;
+}
+
+interface CanBark {
+  bark(): string;
+}
+
+class LivingOrganism {
+  isAlive() {
+    return true;
+  }
+}
+
+class Dog
+  extends LivingOrganism
+  implements AnimalLike, CanBark
+{
+  bark() {
+    return 'woof';
+  }
+
+  eat(food) {
+    return food;
+  }
+}
