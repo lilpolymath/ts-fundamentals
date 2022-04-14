@@ -22,12 +22,12 @@ isJSON(null);
 isJSON({ a: { b: [2, 3, 'foo'] } });
 
 // NEGATIVE test cases (must fail)
-isJSON(() => '');
+// isJSON(() => '');
 
-isJSON(class {});
+// isJSON(class {});
 
-isJSON(undefined);
+// isJSON(undefined);
 
-isJSON(BigInt(143));
+// isJSON(BigInt(143));
 
-isJSON(isJSON);
+// isJSON(isJSON);
